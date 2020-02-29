@@ -7,7 +7,7 @@ mon = a+b
 mon1 = a*b
 opcion = 0
 
-print("Si esto se imprime es que no importa el branch\n")
+## BRANCH MODIFICACIONES
 
 def select():
 	while True:
@@ -442,11 +442,11 @@ def reales(e):
 
 	#Comprobando si es real
 	if (isinstance(numerico, complex)):
-		print("Cumple la Ley de Composición Interna. Es un número real")
-		return 1
-	else:
-		print("No cumple con la Ley de Composición Interna. No es un número real.")
+		print("No cumple la Ley de Composición Interna. NO es un número real.")
 		return 0
+	else:
+		print("Cumple con la Ley de Composición Interna. Es un número real.")
+		return 1
 
 #Inicio del programa.
 print("\nBienvenido a Ley de Composición Interna.\nPrograma elaborado por Sebastián Álvarez y Sebastián Avendaño.\nEstructuras Discretas I. UJAP.")
@@ -602,7 +602,7 @@ elif opcion == 3:
 										resultado2 = eval(expr2)
 										print("Resultado numérico de la segunda expresión: ",resultado2)
 										print("Comprobando si cumple Ley de Composición Interna. . .")
-										if (reales(expresion) == 1):
+										if (reales(expr2) == 1):
 											print("Se cumplió")
 											break
 										else:
