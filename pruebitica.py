@@ -7,6 +7,8 @@ mon = a+b
 mon1 = a*b
 opcion = 0
 
+print("Si esto se imprime es que no importa el branch\n")
+
 def select():
 	while True:
 		print("\n¿Desea conocer si se cumple Monoide Asociativo?\nIngrese 1 de ser así.\nIngrese 2 para salir.")
@@ -288,22 +290,15 @@ def monoideD(e):
 		print("Resultado numerico: ")
 		print(resultado," = ",resultado2)
 
-
-
 def neutro(e): # elemento neutro
 	for i in e:
 		if (i == "/") :
-			print("División no es un operador alojado por el Elemento Neutro.")
+			print("La división no es un operador alojado por el Elemento Neutro.")
 			return 0
 		elif ( i == "-") or (i == "+"):
-			neutro = "(a + b)"
-			neutro = neutro.replace("a + b", e)
-			neutro = neutro.replace("b","l")
-			neutro = neutro.replace("a","0")
-			neutro = neutro.replace("l","a")
-			neutro = neutro.replace("a","0")
-			res = eval(neutro)
 			res2 = eval(e)
+			neutro = 0
+			neutro2 = 'e'
 			print("\nProcedimiento :")
 			print("Se aplica Elemento Neutro. . . ")
 			print("Procedimiento canónico. . .")
@@ -312,11 +307,13 @@ def neutro(e): # elemento neutro
 			print("ae = 0")
 			print("e = 0/a")
 			print("Propiedad:")
-			print("(",e,") + " ,neutro," = ")
+			print("(",e,") + " ,neutro2," = ")
 			print("Entones, la igualdad es. . . ")
-			if (res == 0):
+			print("El valor de la expresión ingresada es: ",res2)
+			res = res2 + neutro
+			if (res == res2):
 				print("\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-				print(e, "+", res)
+				print(e, "+", neutro2)
 				print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
 				print("Expresión (",e,") posee Elemento Neutro en la Adición (a + b)")
 				return 1
@@ -324,18 +321,16 @@ def neutro(e): # elemento neutro
 				print("Expresión (",e,") no posee Elemento Neutro en la Adición (a + b)")
 				return 0
 		elif (i == "*"):
-			neutro = "(a * b)"
-			neutro = neutro.replace("b","l")
-			neutro = neutro.replace("a","1")
-			neutro = neutro.replace("l","a")
-			neutro = neutro.replace("a","1")
-			res = eval(neutro)
 			res2 = eval(e)
+			neutro = 1
+			neutro2 = 'e'
 			print("Aplicando Elemento Neutro. . .")
+			print("(",e,") * ",neutro2,"")
+			res = res2 * neutro
 			print("Entonces, la igualdad es: ")
-			if (res == 1):
+			if (res == res2):
 				print("\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
-				print(e, "*", res)
+				print(e, "*", neutro2)
 				print("\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡\n")
 				print("La expresión (",e,") SI posee Elemento Neutro en la MULTIPLICACIÓN (a * b)")
 				print()
@@ -344,6 +339,7 @@ def neutro(e): # elemento neutro
 				print("\nLa expresión (",e,") NO posee Elemento Neutro en MULTIPLICACIÓN (a * b)")
 				print()
 				return 0
+
 
 def inverso(e):
 	#Aditivo inverso
@@ -440,9 +436,17 @@ def propiedadDistributiva(e1, e2):
 	else:
 		print("La expresión no es anillo.")
 
+def reales(e):
+	#Obteniendo valor numérico de la expresión ingresada
+	numerico = eval(e)
 
-
-
+	#Comprobando si es real
+	if (isinstance(numerico, complex)):
+		print("Cumple la Ley de Composición Interna. Es un número real")
+		return 1
+	else:
+		print("No cumple con la Ley de Composición Interna. No es un número real.")
+		return 0
 
 #Inicio del programa.
 print("\nBienvenido a Ley de Composición Interna.\nPrograma elaborado por Sebastián Álvarez y Sebastián Avendaño.\nEstructuras Discretas I. UJAP.")
@@ -596,18 +600,13 @@ elif opcion == 3:
 										expr2 = segunda_expr()
 										print("La segunda expresión es: ",expr2)
 										resultado2 = eval(expr2)
+										print("Resultado numérico de la segunda expresión: ",resultado2)
 										print("Comprobando si cumple Ley de Composición Interna. . .")
-										if (isinstance(resultado2,complex)):
-											print("Se cumple la Ley de Composición Interna para la segunda expresión")
-											if (select() == 1):
-												if (monoideC(expr2) == 1):
-													if (monoideD(expr2) == 1):
-														print("Hay SEMIGRUPO.")
-														propiedadDistributiva(expresion, expr2)
-														print("Fin del programa.")
-														break
+										if (reales(expresion) == 1):
+											print("Se cumplió")
+											break
 										else:
-											print("La segunda expresion no es real. Fin del programa.")
+											print("Fin del programa.")
 											break
 									break
 								else:

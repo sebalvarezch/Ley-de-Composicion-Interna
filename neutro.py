@@ -53,5 +53,16 @@ def neutro(e): # elemento neutro
 expresion = input("Ingrese una expresión: \n")
 neutro(expresion)
 
-##Probando si se esta cumpliendo este peo 
-sexo = sexo 
+# Funcion que me permite ver si expresion ingresada es real
+
+def reales(e):
+	#Obteniendo valor numérico de la expresión ingresada
+	numerico = eval(e)
+
+	#Comprobando si es real
+	if (isinstance(numerico, complex)):
+		print("Cumple la Ley de Composición Interna. Es un número real")
+		return 1
+	else:
+		print("No cumple con la Ley de Composición Interna. No es un número real.")
+		return 0
