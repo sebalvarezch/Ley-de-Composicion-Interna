@@ -24,6 +24,7 @@ def select():
 				print("Ingrese un número que sea 1 ó 2, tal como se indicó anteriormente. Intente nuevamente")
 		except ValueError:
 			print("\nIngrese una opción válida. La misma debe ser numérica, 1 ó 2. Intente nuevamente.")
+
 #Selección para Grupo
 def select2(): 
 	while True:
@@ -40,6 +41,7 @@ def select2():
 				print("Ingrese un número válido, es decir, 1 ó 2. Intentelo nuevamente.")
 		except ValueError:
 			print("\nIngrese una opción que sea válida, recuerde que la misma debe ser numérica, 1 ó 2 respectivamente.")
+
 #Selección para grupo Abeliano
 def select3():
 	while True:
@@ -340,7 +342,7 @@ def neutro(e): # elemento neutro
 				print()
 				return 0
 
-
+# Elemento inverso
 def inverso(e):
 	#Aditivo inverso
 	#Debe dar el elemento neutro
@@ -376,6 +378,7 @@ def inverso(e):
 		print()
 		return 0
 
+ # Verificando si es grupo
 def conmutatividad(e): #Grupo
 	conmu = e.replace("b","l")
 	conmu = conmu.replace("a","b")
@@ -407,6 +410,7 @@ def conmutatividad(e): #Grupo
 		print("\nResultado: ")
 		print(eval(e)," = ",eval(conmu))
 
+# Obteniendo valor de la segunda expresión 
 def segunda_expr():
 	while True:
 		try:
@@ -416,6 +420,7 @@ def segunda_expr():
 		except ValueError:
 			print("La segunda expresión no es válida. Ingrese nuevamente.")
 
+# Función para la elaboración de la propiedad distributiva
 def propiedadDistributiva(e1, e2):
 	#a*(b+c)
 	elm = e1.replace("b","c")
@@ -436,6 +441,7 @@ def propiedadDistributiva(e1, e2):
 	else:
 		print("La expresión no es anillo.")
 
+# Comprobación de números reales.
 def reales(e):
 	#Obteniendo valor numérico de la expresión ingresada
 	numerico = eval(e)
@@ -463,6 +469,7 @@ while True:
 		print("Ingrese un valor válido. Recuerde que debe ser numérico, del 1 al 4 respectivamente.\nIntente nuevamente.")
 		#Manejo de excepciones para evitar que el usuario ingrese un valor diferente a uno numérico.
 ##print("Fuera del ciclo ya.")
+
 #Entero
 if opcion == 1:
 	while True:
@@ -575,6 +582,7 @@ elif opcion == 2:
 				break
 		except NameError:
 			print("Expresión ingresada no es válida, intente nuevamente.")
+
 #Real
 elif opcion == 3:
 	while True:
@@ -603,12 +611,18 @@ elif opcion == 3:
 										print("Resultado numérico de la segunda expresión: ",resultado2)
 										print("Comprobando si cumple Ley de Composición Interna. . .")
 										if (reales(expr2) == 1):
-											print("Se cumplió")
-											break
+											if (select() == 1): 
+												monoideC(expr2)
+												monoideD(expr2)	
+												print("\nLa segunda expresión ingresada es SEMIGRUPO.")
+												propiedadDistributiva(expresion, expr2)
+												print("Fin del programa.")
+												break	
 										else:
 											print("Fin del programa.")
 											break
-									break
+									else:
+										break
 								else:
 									print("Fin del programa.")
 									break
@@ -628,6 +642,7 @@ elif opcion == 3:
 					break
 		except NameError:
 			print("Expresión ingresada no es válida, intente nuevamente.")
+
 #Complejos
 elif opcion == 4:
 	while True:
