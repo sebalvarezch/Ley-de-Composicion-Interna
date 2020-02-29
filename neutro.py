@@ -1,5 +1,6 @@
 a = 2
 b = 10
+c = 5
 def neutro(e): # elemento neutro
 	for i in e:
 		if (i == "/") :
@@ -51,18 +52,39 @@ def neutro(e): # elemento neutro
 				return 0
 
 expresion = input("Ingrese una expresión: \n")
-neutro(expresion)
+#neutro(expresion)
 
 # Funcion que me permite ver si expresion ingresada es real
 
-def reales(e):
+#def reales(e):
 	#Obteniendo valor numérico de la expresión ingresada
-	numerico = eval(e)
+	#numerico = eval(e)
 
 	#Comprobando si es real
-	if (isinstance(numerico, complex)):
-		print("Cumple la Ley de Composición Interna. Es un número real")
-		return 1
-	else:
-		print("No cumple con la Ley de Composición Interna. No es un número real.")
-		return 0
+	#if (isinstance(numerico, complex)):
+	#	print("Cumple la Ley de Composición Interna. Es un número real")
+	#	return 1
+	#else:
+	#	print("No cumple con la Ley de Composición Interna. No es un número real.")
+	#	return 0
+
+expresion2 = input("Ingrese la segunda expresión a evaluar: ")
+def distributiva(e1, e2):
+	#a*(b+c) 
+        elm = e1.replace("b","c")
+        elm = elm.replace("a","b")
+        dist1 = e2.replace("b","("+elm+")")
+        r1 = eval(dist1)
+        #a*b + a*c
+        dist2 = "(a*b)+(a*c)"
+        elm1 = e2.replace("b","c")
+        dist2 = dist2.replace("a*b",e2)
+        dist2 = dist2.replace("a*c",elm1)
+        r2 = eval(dist2)
+        print(dist1,"debe ser igual a", dist2)
+        if r1 == r2:
+            print("es anillo")
+        else:
+            print("no es anillo")
+
+distributiva(expresion, expresion2)
