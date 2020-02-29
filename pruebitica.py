@@ -7,7 +7,6 @@ mon = a+b
 mon1 = a*b
 opcion = 0
 
-#Probando en pruebitica 
 def select():
 	while True:
 		print("\n¿Desea conocer si se cumple Monoide Asociativo?\nIngrese 1 de ser así.\nIngrese 2 para salir.")
