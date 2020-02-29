@@ -52,3 +52,6 @@ def neutro(e): # elemento neutro
 
 expresion = input("Ingrese una expresión: \n")
 neutro(expresion)
+
+##Probando si se esta cumpliendo este peo 
+sexo = sexo 
