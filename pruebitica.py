@@ -696,3 +696,4 @@ elif opcion == 4:
 				break
 		except NameError:
 			print("Expresión ingresada no es válida, intente nuevamente.")
+			#HIII IM HEREEE
