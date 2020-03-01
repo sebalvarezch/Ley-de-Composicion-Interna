@@ -7,14 +7,16 @@ mon = a+b
 mon1 = a*b
 m = 0
 
-
-## BRANCH MODIFICACIONES
+# Funciones que permiten el correcto desarrollo del programa
 
 def select():
+
 	while True:
 		print("\n¿Desea conocer si se cumple Monoide Asociativo?\nIngrese 1 de ser así.\nIngrese 2 para salir.")
+
 		try:
 			seleccion = int(input("Ingrese la opción: "))
+
 			if seleccion == 1:
 				return seleccion
 				break
@@ -23,13 +25,16 @@ def select():
 				break
 			else:
 				print("Ingrese un número que sea 1 ó 2, tal como se indicó anteriormente. Intente nuevamente")
+
 		except ValueError:
 			print("\nIngrese una opción válida. La misma debe ser numérica, 1 ó 2. Intente nuevamente.")
 
 #Selección para Grupo
 def select2(): 
+
 	while True:
 		print("\n¿Desea conocer si su expresión pertenece a un Grupo?\nIngrese 1 si la respuesta es afirmativa. \nIngrese 2 para salir")
+
 		try:
 			seleccion = int(input("Ingrese la opción deseada: "))
 			if seleccion == 1:
@@ -40,13 +45,16 @@ def select2():
 				break
 			else:
 				print("Ingrese un número válido, es decir, 1 ó 2. Intentelo nuevamente.")
+
 		except ValueError:
 			print("\nIngrese una opción que sea válida, recuerde que la misma debe ser numérica, 1 ó 2 respectivamente.")
 
 #Selección para grupo Abeliano
 def select3():
+
 	while True:
 		print("\n¿Desea conocer si su expresión pertenece a un Grupo Abeliano?\nIngrese 1 si es así. \nIngrese 2 para salir y finalizar el programa")
+
 		try:
 			seleccion = int(input("Ingrese la opción deseada: "))
 			if seleccion == 1:
@@ -57,13 +65,17 @@ def select3():
 				break
 			else:
 				print("Ingrese un número válido, es decir, 1 ó 2. Intentelo nuevamente.")
+
 		except ValueError:
 			print("\nIngrese una opción que sea válida, recuerde que la misma debe ser numérica, 1 ó 2 respectivamente.")
 
 #Selección para Anillo
 def select4():
+
 	while True:
+
 		print("\n¿Deseea conocer si su expresión cumple con los parámetros de ANILLO?\nIngrese 1 si es así.\nIngrese 2 para salir y finalizar el programa")
+
 		try:
 			seleccion = int(input("Ingresa la opción deseada: "))
 			if seleccion == 1:
@@ -72,12 +84,14 @@ def select4():
 			elif seleccion == 2:
 				return seleccion
 				break
+
 		except ValueError:
 			print("\nIngrese una opción que sea válida, recuerde que la misma debe ser numérica, 1 ó 2 respectivamente.")
 
 #Propiedades
 def monoideA(e): # Funcion que demuestra existencia o no del monoide asociativo (a * b) * c = a * (b * c)  [(a * b)]
 	#Reemplazando en asociativa
+
 	aso = "(a * b)" # * c
 	aso1 = "(a * c)"
 	aso3 = "a * b"
@@ -109,6 +123,7 @@ def monoideA(e): # Funcion que demuestra existencia o no del monoide asociativo 
 	print(" a = a")
 	print(" b = ", asoR4)
 	print("Con esto podemos entender que: a * b\n")
+
 	if (resultado == resultado2):
 		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
 		print(result2, " = ", res2)
@@ -119,6 +134,7 @@ def monoideA(e): # Funcion que demuestra existencia o no del monoide asociativo 
 		print("Resultado numérico: ")
 		print(resultado," = ",resultado2)
 		return "1"
+
 	else:
 		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
 		print(result2, " = ", res2)
@@ -164,6 +180,7 @@ def monoideB(e):
 	print(" a = a")
 	print(" b = ", asoR4)
 	print("Es posible dar a entender que: a * b\n")
+
 	if (resultado == resultado2):
 		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
 		print(result2, " = ", res2)
@@ -174,6 +191,7 @@ def monoideB(e):
 		print("Resultado numérico: ")
 		print(resultado," = ",resultado2)
 		return "1"
+
 	else:
 		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
 		print(result2, " = ", res2)
@@ -187,6 +205,7 @@ def monoideB(e):
 #Copia de A
 def monoideC(e): # Funcion que demuestra existencia o no del monoide asociativo (a * b) * c = a * (b * c)  [(a * b)]
 	#Reemplazando en asociativa
+
 	aso = "(a * b)" # * c
 	aso1 = "(a * c)"
 	aso3 = "a * b"
@@ -218,6 +237,7 @@ def monoideC(e): # Funcion que demuestra existencia o no del monoide asociativo 
 	print(" a = a")
 	print(" b = ", asoR4)
 	print("Con esto podemos entender que: a * b\n")
+
 	if (resultado == resultado2):
 		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
 		print(result2, " = ", res2)
@@ -273,6 +293,7 @@ def monoideD(e):
 	print(" a = a")
 	print(" b = ", asoR4)
 	print("Es posible dar a entender que: a * b\n")
+
 	if (resultado == resultado2):
 		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
 		print(result2, " = ", res2)
@@ -283,6 +304,7 @@ def monoideD(e):
 		print("Resultado numérico: ")
 		print(resultado," = ",resultado2)
 		return 1
+		#Retornando 1 para la comprobación de grupo abeliano
 	else:
 		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
 		print(result2, " = ", res2)
@@ -374,6 +396,7 @@ def inverso(e):
 		print("La expresión (",e,") SI tiene Elemento Inverso MULTIPLICATIVO [",Inver2,"]")
 		print()
 		return 1
+		# retornando 1 para la comprobacion de grupo abeliano
 	else:
 		print("La expresión (",e,") NO tiene Elemento Inverso ADITIVO ó MULTIPLICATIVO \n[",Inver,"] o [",Inver2,"]")
 		print()
@@ -392,6 +415,7 @@ def conmutatividad(e): #Grupo
 	print("Se demuestra: ")
 	print(e, " = ", conmu)
 	print("La igualdad es: ")
+
 	if (eval(e) == eval(conmu)):
 		print("\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
 		print(eval(e), " = ", eval(conmu))
@@ -413,11 +437,14 @@ def conmutatividad(e): #Grupo
 
 # Obteniendo valor de la segunda expresión 
 def segunda_expr():
+
 	while True:
+
 		try:
 			expr2 = input("Ingrese la segunda expresión: ")
 			resultado2 = eval(expr2)
 			return expr2
+
 		except ValueError:
 			print("La segunda expresión no es válida. Ingrese nuevamente.")
 
@@ -441,6 +468,7 @@ def propiedadDistributiva(e1, e2):
 	if (r1 == r2):
 		print("\nLa expresión es anillo.")
 		return 1
+		# retornando 1 para la comprobacion de cuerpo
 	else:
 		print("La expresión no es anillo.")
 
@@ -475,28 +503,35 @@ while True:
 
 #Entero
 if opcion == 1:
+
 	while True:
 		print("\nHa escogido trabajar con el conjunto de los números enteros. Por favor, ingrese la expresión matemática a comprobar:")
+
 		try:
 			expresion = input("Ingrese la expresión: ")
 			resultado = eval(expresion)
+
 			if (isinstance(resultado,int)):
 				print("La expresión ingresada (",expresion,") cumple la Ley de Composición Interna. \nSu resultado es: ",resultado,"")
+
 				if (select() == 1): #Pregunta si desea comprobar la propiedad asociativa
 					monoideA(expresion)
 					monoideB(expresion)
+
 					if (select2() == 1): #Pregunta si desea comprobar si es grupo
 						if (neutro(expresion) == 1):
 							if (inverso(expresion) == 1):
 								if (select3() == 1):
 									conmutatividad(expresion)
-									if (select4() == 1):
+
+									if (select4() == 1): #Pregunta si desea conocer ANILLO
 										expr2 = segunda_expr()
 										print("La segunda expresión es: ",expr2)
 										resultado2 = eval(expr2)
 										if (isinstance(resultado2, int)):
 											print("La segunda expresión cumple con la Ley de Composición Interna")
 											print("Comprobando MONOIDE ASOCIATIVO. . .")
+
 											if (select() == 1):
 												if (monoideC(expr2) == 1):
 													m+=1
@@ -535,27 +570,35 @@ if opcion == 1:
 
 #Natural
 elif opcion == 2:
+
 	while True:
 		print("\nHa escogido trabajar con el conjunto de los números naturales. Por favor, ingrese la expresión matemática a comprobar:")
+
 		try:
 			expresion = input("Ingrese la expresión: ")
 			resultado = eval(expresion)
+
 			if (resultado >= 0 and isinstance(resultado,int)):
 				print("La expresión (",expresion,") cumple con la Ley de Composición Interna.")
 				print("Resultado: ",resultado)
+
 				if (select() == 1):
 					monoideA(expresion)
 					monoideB(expresion)
+
 					if (select2() == 1 ):
 						if (neutro(expresion) == 1):
 							if (inverso(expresion) == 1):
 								print("\nPertenece a grupo.")
+
 								if (select3() == 1):
 									conmutatividad(expresion)
+
 									if (select4() == 1):
 										expr2 = segunda_expr()
 										print("La segunda expresión es: ",expr2)
 										resultado2 = eval(expr2)
+
 										if (resultado2 >= 0 and isinstance(resultado2, int)):
 											print("La segunda expresión cumple con la Ley de Composición Interna")
 											if (select() == 1): 
@@ -600,8 +643,10 @@ elif opcion == 2:
 
 #Real
 elif opcion == 3:
+
 	while True:
 		print("\nHa escogido trabajar con el conjunto de los números reales. Por favor, ingrese la expresión matemática a comprobar: ")
+
 		try:
 			expresion = input("Ingrese la expresión: ")
 			resultado = eval(expresion)
@@ -619,12 +664,14 @@ elif opcion == 3:
 							if (inverso(expresion) == 1):
 								if (select3() == 1):
 									conmutatividad(expresion)
+
 									if (select4() == 1):
 										expr2 = segunda_expr()
 										print("La segunda expresión es: ",expr2)
 										resultado2 = eval(expr2)
 										print("Resultado numérico de la segunda expresión: ",resultado2)
 										print("Comprobando si cumple Ley de Composición Interna. . .")
+
 										if (reales(expr2) == 1):
 											if (select() == 1): 
 												if (monoideC(expr2) == 1):
@@ -636,8 +683,8 @@ elif opcion == 3:
 												if (m == 2):
 													print("\nLa segunda expresión ingresada es SEMIGRUPO.")
 												if (m == 3):
-													print("Hay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva")
-												print("Fin del programa.")
+													print("\nHay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva")
+												print("\nFin del programa.")
 												break	
 										else:
 											print("Fin del programa.")
@@ -666,28 +713,34 @@ elif opcion == 3:
 
 #Complejos
 elif opcion == 4:
+
 	while True:
 		print("\nHa escogido trabajar con el conunto de los números complejos. Por favor, ingrese la expresión matemática a comprobar")
+
 		try:
 			expresion = input("Ingrese la expresión: ")
 			resultado = eval(expresion)
 			if (isinstance(resultado, complex)):
 				print("La expresión ingresada (",expresion,") cumple con la Ley de Composición Interna.")
 				print("Resultado: ",resultado)
+
 				if (select() == 1):
 					monoideA(expresion)
 					monoideB(expresion)
+
 					if (select2() == 1):
 						if (neutro(expresion) == 1):
 							if (inverso(expresion) == 1):
 								if (select3() == 1):
 									conmutatividad(expresion)
+
 									if (select4() == 1):
 										expr2 = segunda_expr()
 										print("La segunda expresión es: ",expr2)
 										resultado2 = eval(expr2)
 										if (isinstance(resultado2, complex)):
 											print("La segunda expresión cumple con la Ley de Composición Interna")
+
 											if (select() == 1): 
 												if (monoideC(expr2) == 1):
 													m+=1
@@ -698,8 +751,8 @@ elif opcion == 4:
 												if (m == 2):
 													print("\nLa segunda expresión ingresada es SEMIGRUPO.")
 												if (m == 3):
-													print("Hay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva.")
-												print("Fin del programa.")
+													print("\nHay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva.")
+												print("\nFin del programa.")
 									print("Fin del programa.")
 									break
 							else:
@@ -723,4 +776,3 @@ elif opcion == 4:
 				break
 		except NameError:
 			print("Expresión ingresada no es válida, intente nuevamente.")
-			#HIII IM HEREEE
