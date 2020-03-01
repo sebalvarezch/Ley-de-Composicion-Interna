@@ -5,7 +5,8 @@ b = 4
 c = 7
 mon = a+b
 mon1 = a*b
-opcion = 0
+m = 0
+
 
 ## BRANCH MODIFICACIONES
 
@@ -226,7 +227,7 @@ def monoideC(e): # Funcion que demuestra existencia o no del monoide asociativo 
 		print("SI CUMPLE, se trata de un monoide asociativo")
 		print("Resultado numérico: ")
 		print(resultado," = ",resultado2)
-		return "1"
+		return 1
 	else:
 		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
 		print(result2, " = ", res2)
@@ -281,7 +282,7 @@ def monoideD(e):
 		print("SI CUMPLE, ES UN monoide asociativo ")
 		print("Resultado numérico: ")
 		print(resultado," = ",resultado2)
-		return "1"
+		return 1
 	else:
 		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
 		print(result2, " = ", res2)
@@ -434,10 +435,12 @@ def propiedadDistributiva(e1, e2):
 	dist2 = dist2.replace("a*b",e2)
 	dist2 = dist2.replace("a*c",elm1)
 	r2 = eval(dist2)
+	print("\nPropiedad Distributiva")
 	print(dist1, "debe ser igual a ",dist2)
 
 	if (r1 == r2):
-		print("La expresión es anillo.")
+		print("\nLa expresión es anillo.")
+		return 1
 	else:
 		print("La expresión no es anillo.")
 
@@ -495,10 +498,16 @@ if opcion == 1:
 											print("La segunda expresión cumple con la Ley de Composición Interna")
 											print("Comprobando MONOIDE ASOCIATIVO. . .")
 											if (select() == 1):
-												monoideC(expr2)
-												monoideD(expr2)	
-												print("\nLa segunda expresión ingresada es SEMIGRUPO.")
-												propiedadDistributiva(expresion, expr2)
+												if (monoideC(expr2) == 1):
+													m+=1
+												if (monoideD(expr2) == 1):
+													m+=1	
+												if (propiedadDistributiva(expresion, expr2) == 1):
+													m+=1
+												if (m == 2):
+													print("\nLa segunda expresión ingresada es SEMIGRUPO.")
+												if (m ==3 ):
+													print("\nHay CUERPO. Se cumple tanto GRUPO ABELIANO como PROPIEDAD DISTRIBUTIVA")
 												print("Fin del programa.")
 										else:
 											print("La segunda expresión NO cumple con la Ley de Composición Interna")
@@ -550,10 +559,16 @@ elif opcion == 2:
 										if (resultado2 >= 0 and isinstance(resultado2, int)):
 											print("La segunda expresión cumple con la Ley de Composición Interna")
 											if (select() == 1): 
-												monoideC(expr2)
-												monoideD(expr2)	
-												print("\nLa segunda expresión ingresada es SEMIGRUPO.")
-												propiedadDistributiva(expresion, expr2)
+												if (monoideC(expr2) == 1):
+													m+=1
+												if (monoideD(expr2) == 1):
+													m+=1	
+												if (propiedadDistributiva(expresion, expr2) == 1):
+													m+=1
+												if (m == 2):
+													print("\nLa segunda expresión ingresada es SEMIGRUPO.")
+												if (m == 3):
+													print("Hay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva")
 												print("Fin del programa.")
 
 										else:
@@ -612,10 +627,16 @@ elif opcion == 3:
 										print("Comprobando si cumple Ley de Composición Interna. . .")
 										if (reales(expr2) == 1):
 											if (select() == 1): 
-												monoideC(expr2)
-												monoideD(expr2)	
-												print("\nLa segunda expresión ingresada es SEMIGRUPO.")
-												propiedadDistributiva(expresion, expr2)
+												if (monoideC(expr2) == 1):
+													m+=1
+												if (monoideD(expr2)	== 1):
+													m+=1
+												if (propiedadDistributiva(expresion, expr2) ==1):
+													m+=1
+												if (m == 2):
+													print("\nLa segunda expresión ingresada es SEMIGRUPO.")
+												if (m == 3):
+													print("Hay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva")
 												print("Fin del programa.")
 												break	
 										else:
@@ -668,10 +689,16 @@ elif opcion == 4:
 										if (isinstance(resultado2, complex)):
 											print("La segunda expresión cumple con la Ley de Composición Interna")
 											if (select() == 1): 
-												monoideC(expr2)
-												monoideD(expr2)	
-												print("\nLa segunda expresión ingresada es SEMIGRUPO.")
-												propiedadDistributiva(expresion, expr2)
+												if (monoideC(expr2) == 1):
+													m+=1
+												if (monoideD(expr2) == 1):
+													m+=1	
+												if (propiedadDistributiva(expresion, expr2) == 1):
+													m+=1
+												if (m == 2):
+													print("\nLa segunda expresión ingresada es SEMIGRUPO.")
+												if (m == 3):
+													print("Hay CUERPO. Se cumple tanto Grupo Abeliano como Propiedad Distributiva.")
 												print("Fin del programa.")
 									print("Fin del programa.")
 									break
