@@ -7,8 +7,6 @@ mon = a+b
 mon1 = a*b
 opcion = 0
 
-## BRANCH MODIFICACIONES
-
 def select():
 	while True:
 		print("\n¿Desea conocer si se cumple Monoide Asociativo?\nIngrese 1 de ser así.\nIngrese 2 para salir.")
@@ -226,7 +224,7 @@ def monoideC(e): # Funcion que demuestra existencia o no del monoide asociativo 
 		print("SI CUMPLE, se trata de un monoide asociativo")
 		print("Resultado numérico: ")
 		print(resultado," = ",resultado2)
-		return "1"
+		return 1
 	else:
 		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
 		print(result2, " = ", res2)
@@ -281,7 +279,7 @@ def monoideD(e):
 		print("SI CUMPLE, ES UN monoide asociativo ")
 		print("Resultado numérico: ")
 		print(resultado," = ",resultado2)
-		return "1"
+		return 1
 	else:
 		print("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
 		print(result2, " = ", res2)
